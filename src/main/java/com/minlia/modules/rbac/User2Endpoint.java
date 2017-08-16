@@ -4,13 +4,11 @@ import com.minlia.cloud.body.StatefulBody;
 import com.minlia.cloud.body.impl.SuccessResponseBody;
 import com.minlia.cloud.query.specification.batis.body.ApiQueryRequestBody;
 import com.minlia.modules.rbac.dao.UserDao;
-import com.minlia.modules.rbac.domain.User;
 import com.minlia.modules.rbac.query.UserQueryRequestBody;
 import com.minlia.modules.rbac.service.UserQueryService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -29,7 +27,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(tags = "用户2", value = "用户2", description = "用户2")
 public class User2Endpoint {
 
-//    @Autowired
+    //    @Autowired
 //    User2Dao user2Dao;
     @Autowired
     UserDao userDao;
@@ -51,22 +49,28 @@ public class User2Endpoint {
 
 //        Page<User> foundUser2 = user2Dao.findAll222(pageable);
 
+//
+//        for(int i=0;i<50;i++){
+//            User user=new User();
+//            String random= RandomStringUtils.randomAlphabetic(6);
+//            user.setFirstName(random);
+//            random= RandomStringUtils.randomAlphabetic(6);
+//            user.setLastName(random);
+//            random= RandomStringUtils.randomAlphabetic(6);
+//            user.setEmail(random+"@qq.com");
+//            userDao.insert(user);
+//        }
 
-        for(int i=0;i<50;i++){
-            User user=new User();
-            String random= RandomStringUtils.randomAlphabetic(6);
-            user.setFirstName(random);
-            random= RandomStringUtils.randomAlphabetic(6);
-            user.setLastName(random);
-            random= RandomStringUtils.randomAlphabetic(6);
-            user.setEmail(random+"@qq.com");
-            userDao.insert(user);
-        }
 
+//        List<User> user = userQueryService.findAll(new SpecificationDetail());
+
+
+        Page userFound = userQueryService.findAll(body, pageable);
 //        User userFound = userDao.findOneByUsernameOrEmailOrCellphone("admin", "admin", "admin");
-        Page<User> userFound = userDao.findUseMapper22(pageable,"%x%");
-//        Page<User> userFound = userDao.findUseMapper444(pageable);
-        log.debug("UserFound {}", userFound);
+//        Page<User> userFound = userDao.findUseMapper22(pageable,"%x%");
+//        Page<User> userFound = userDao.findOneByUsernameOrEmailOrCellphone()
+//          userFound = userDao.findUseMapper444(pageable);
+//        log.debug("UserFound {}", userFound);
 
         return SuccessResponseBody.builder().payload(userFound).build();
     }

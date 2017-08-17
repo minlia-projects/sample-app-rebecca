@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @RequestMapping(value = "/api/account/read")
-@Api(tags = "账户查询接口", description = "账户查询接口")
+@Api(tags = "Account Read", description = "账户查询接口")
 public class AccountReadOnlyEndpoint implements ApiReadOnlyEndpoint<AccountQueryRequestBody, Account, Long> {
 
     @Autowired
@@ -46,7 +46,7 @@ public class AccountReadOnlyEndpoint implements ApiReadOnlyEndpoint<AccountQuery
     }
 
     //    @PreAuthorize(value = "hasAnyAuthority('account.findOne')")
-    @ApiOperation(value = "根据条件查询单个结果", notes = "根据条件查询单个结果", httpMethod = "POST", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "根据ID查询单个结果", notes = "根据ID查询单个结果", httpMethod = "POST", produces = MediaType.APPLICATION_JSON_VALUE)
     @PostMapping(value = "findOne/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @Override
     public StatefulBody findOne(@PathVariable Long id) {

@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping(value = "/api/account/test")
-@Api(tags = "账户测试接口", description = "账户测试接口")
+@Api(tags = "Account Test", description = "账户测试接口")
 public class AccountTestOnlyEndpoint {
 
     @Autowired

@@ -95,7 +95,6 @@
             <scope>test</scope>
         </dependency>
 
-
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
@@ -109,7 +108,6 @@
             <scope>test</scope>
         </dependency>
 
-
         <dependency>
             <groupId>org.lazyluke</groupId>
             <artifactId>log4jdbc-remix</artifactId>
@@ -118,20 +116,7 @@
 
         <dependency>
             <groupId>com.minlia.cloud.modules</groupId>
-            <artifactId>module-data</artifactId>
-            <version>1.0.1-SNAPSHOT</version>
-        </dependency>
-
-
-        <dependency>
-            <groupId>com.minlia.cloud.modules</groupId>
             <artifactId>module-swagger</artifactId>
-            <version>1.0.1-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.minlia.cloud.modules</groupId>
-            <artifactId>module-security</artifactId>
             <version>1.0.1-SNAPSHOT</version>
         </dependency>
 

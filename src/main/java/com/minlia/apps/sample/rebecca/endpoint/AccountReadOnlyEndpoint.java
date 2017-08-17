@@ -14,10 +14,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by will on 8/17/17.
@@ -50,9 +47,9 @@ public class AccountReadOnlyEndpoint implements ApiReadOnlyEndpoint<AccountQuery
 
     //    @PreAuthorize(value = "hasAnyAuthority('account.findOne')")
     @ApiOperation(value = "根据条件查询单个结果", notes = "根据条件查询单个结果", httpMethod = "POST", produces = MediaType.APPLICATION_JSON_VALUE)
-    @PostMapping(value = "findOne", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "findOne/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @Override
-    public StatefulBody findOne(Long id) {
+    public StatefulBody findOne(@PathVariable Long id) {
         Account found = accountReadOnlyService.getOne(id);
         return SuccessResponseBody.builder().payload(found).build();
     }

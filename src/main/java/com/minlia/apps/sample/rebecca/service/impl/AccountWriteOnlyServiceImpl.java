@@ -16,9 +16,4 @@ import javax.annotation.PostConstruct;
 @Slf4j
 public class AccountWriteOnlyServiceImpl extends AbstractWriteOnlyService<AccountDao, Account, Long> implements AccountWriteOnlyService {
 
-    @PostConstruct
-    public void post() {
-
-    }
-
 }

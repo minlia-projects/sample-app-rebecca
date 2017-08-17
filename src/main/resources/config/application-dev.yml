@@ -2,7 +2,7 @@ server:
     port: 10001
 
 system:
-    appId: securityapp
+    appId: rebeccaapp
     token: bWlubGlhCg==
     
 spring:
@@ -19,7 +19,7 @@ spring:
 #                - classpath:/dao/*Dao.xml
     profile: dev
     application:
-        name: miniapp
+        name: rebeccaapp
 
     datasource:
         testOnBorrow: true
@@ -66,9 +66,9 @@ system.security.jwt:
 #  database-platform: org.hibernate.dialect.H2Dialect
 #spring.h2.console.enabled: true
 swagger:
-    title: 安全接口
-    description: 安全接口
-    version: 2.0
+    title: ${spring.application.name}接口
+    description: ${spring.application.name}接口
+    version: 1.0
     contact: cloud@minlia.com
     path: /api/.*
     redirect: true

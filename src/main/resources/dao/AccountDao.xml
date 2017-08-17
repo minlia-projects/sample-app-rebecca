@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.minlia.apps.sample.rebecca.domain.Account">
+
+    <select id="findAllAccountsByXmlWithSort" resultType="com.minlia.apps.sample.rebecca.domain.Account" lang="XML">
+        SELECT
+        *
+        from ACCOUNT as account
+        where 1=1
+        and account.name like #{p0}
+-- 以下内容来自于自动生成的DAO.XML
+        <if test="_sorts != null">
+            <bind name="_columnsMap"
+                  value='#{"id":"`account`.id","id":"`account`.id","appId":"`account`.app_id","createdBy":"`account`.created_by","enabled":"`account`.enabled","locale":"`account`.locale","lastModifiedBy":"`account`.last_modified_by","name":"`account`.name","tenantId":"`account`.tenant_id"}'/>
+            order by
+            <foreach item="item" index="idx" collection="_sorts" open="" separator="," close=""><if
+                    test="item.ignoreCase">lower(</if>${_columnsMap[item.property]}<if test="item.ignoreCase">)</if> ${item.direction}
+            </foreach>
+        </if>
+        <include refid="LIMIT" />
+    </select>
+
+    <select id="count_findAllAccountsByXmlWithSort" resultType="com.minlia.apps.sample.rebecca.domain.Account" lang="XML">
+        SELECT
+        count(*)
+        from ACCOUNT as account
+
+        where 1=1
+
+        and account.name like #{p0}
+    </select>
+
+
+
+
+
+
+
+    <select id="findAllAccountsByXml" resultType="com.minlia.apps.sample.rebecca.domain.Account" lang="XML">
+        SELECT
+        *
+        from ACCOUNT as account
+        where 1=1
+        and account.name like #{p0}
+        <include refid="LIMIT" />
+    </select>
+
+    <select id="count_findAllAccountsByXml" resultType="com.minlia.apps.sample.rebecca.domain.Account" lang="XML">
+        SELECT
+        count(*)
+        from ACCOUNT as account
+
+        where 1=1
+
+        and account.name like #{p0}
+    </select>
+
+</mapper>

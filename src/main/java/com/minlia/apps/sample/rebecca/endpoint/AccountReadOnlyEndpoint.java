@@ -13,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.MediaType;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,7 +29,7 @@ public class AccountReadOnlyEndpoint implements ApiReadOnlyEndpoint<AccountQuery
     @Autowired
     private AccountReadOnlyService accountReadOnlyService;
 
-    @PreAuthorize(value = "hasAnyAuthority('account.findAll')")
+    //    @PreAuthorize(value = "hasAnyAuthority('account.findAll')")
     @ApiOperation(value = "根据条件查询分页结果", notes = "根据条件查询分页结果", httpMethod = "POST", produces = MediaType.APPLICATION_JSON_VALUE)
     @PostMapping(value = "findAllPage", produces = MediaType.APPLICATION_JSON_VALUE)
     public StatefulBody findAll(@RequestBody ApiQueryRequestBody<AccountQueryRequestBody> body, Pageable pageable) {
@@ -38,7 +37,7 @@ public class AccountReadOnlyEndpoint implements ApiReadOnlyEndpoint<AccountQuery
         return SuccessResponseBody.builder().payload(found).build();
     }
 
-    @PreAuthorize(value = "hasAnyAuthority('account.findAll')")
+    //    @PreAuthorize(value = "hasAnyAuthority('account.findAll')")
     @ApiOperation(value = "根据条件查询集合结果", notes = "根据条件查询集合结果", httpMethod = "POST", produces = MediaType.APPLICATION_JSON_VALUE)
     @PostMapping(value = "findAllList", produces = MediaType.APPLICATION_JSON_VALUE)
     @Override
@@ -48,7 +47,7 @@ public class AccountReadOnlyEndpoint implements ApiReadOnlyEndpoint<AccountQuery
         return SuccessResponseBody.builder().build();
     }
 
-    @PreAuthorize(value = "hasAnyAuthority('account.findOne')")
+    //    @PreAuthorize(value = "hasAnyAuthority('account.findOne')")
     @ApiOperation(value = "根据条件查询单个结果", notes = "根据条件查询单个结果", httpMethod = "POST", produces = MediaType.APPLICATION_JSON_VALUE)
     @PostMapping(value = "findOne", produces = MediaType.APPLICATION_JSON_VALUE)
     @Override

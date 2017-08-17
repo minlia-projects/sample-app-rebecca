@@ -9,7 +9,6 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -23,7 +22,7 @@ public class AccountWriteOnlyEndpoint implements ApiWriteOnlyEndpoint<Account, L
     @Autowired
     private AccountWriteOnlyService accountWriteOnlyService;
 
-    @PreAuthorize(value = "hasAnyAuthority('account.create')")
+    //    @PreAuthorize(value = "hasAnyAuthority('account.create')")
     @ApiOperation(value = "创建", notes = "创建", httpMethod = "POST", produces = MediaType.APPLICATION_JSON_VALUE)
     @PostMapping(value = "create", produces = MediaType.APPLICATION_JSON_VALUE)
     @Override
@@ -32,7 +31,7 @@ public class AccountWriteOnlyEndpoint implements ApiWriteOnlyEndpoint<Account, L
         return SuccessResponseBody.builder().payload(created).build();
     }
 
-    @PreAuthorize(value = "hasAnyAuthority('account.update')")
+    //    @PreAuthorize(value = "hasAnyAuthority('account.update')")
     @ApiOperation(value = "更新", notes = "更新", httpMethod = "PUT", produces = MediaType.APPLICATION_JSON_VALUE)
     @PutMapping(value = "update", produces = MediaType.APPLICATION_JSON_VALUE)
     @Override
@@ -41,7 +40,7 @@ public class AccountWriteOnlyEndpoint implements ApiWriteOnlyEndpoint<Account, L
         return SuccessResponseBody.builder().payload(updated).build();
     }
 
-    @PreAuthorize(value = "hasAnyAuthority('account.delete')")
+    //    @PreAuthorize(value = "hasAnyAuthority('account.delete')")
     @ApiOperation(value = "删除", notes = "删除", httpMethod = "DELETE", produces = MediaType.APPLICATION_JSON_VALUE)
     @DeleteMapping(value = "delete", produces = MediaType.APPLICATION_JSON_VALUE)
     @Override

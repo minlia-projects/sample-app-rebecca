@@ -26,7 +26,7 @@ public class AccountWriteOnlyEndpoint implements ApiWriteOnlyEndpoint<Account, L
     @ApiOperation(value = "创建", notes = "创建", httpMethod = "POST", produces = MediaType.APPLICATION_JSON_VALUE)
     @PostMapping(value = "create", produces = MediaType.APPLICATION_JSON_VALUE)
     @Override
-    public StatefulBody create(Account account) {
+    public StatefulBody create(@RequestBody Account account) {
         Account created = accountWriteOnlyService.save(account);
         return SuccessResponseBody.builder().payload(created).build();
     }
@@ -35,16 +35,16 @@ public class AccountWriteOnlyEndpoint implements ApiWriteOnlyEndpoint<Account, L
     @ApiOperation(value = "更新", notes = "更新", httpMethod = "PUT", produces = MediaType.APPLICATION_JSON_VALUE)
     @PutMapping(value = "update", produces = MediaType.APPLICATION_JSON_VALUE)
     @Override
-    public StatefulBody update(Long id, Account account) {
+    public StatefulBody update(@RequestBody Account account) {
         Account updated = accountWriteOnlyService.update(account);
         return SuccessResponseBody.builder().payload(updated).build();
     }
 
     //    @PreAuthorize(value = "hasAnyAuthority('account.delete')")
     @ApiOperation(value = "删除", notes = "删除", httpMethod = "DELETE", produces = MediaType.APPLICATION_JSON_VALUE)
-    @DeleteMapping(value = "delete", produces = MediaType.APPLICATION_JSON_VALUE)
+    @DeleteMapping(value = "delete/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @Override
-    public StatefulBody delete(Long id) {
+    public StatefulBody delete(@PathVariable Long id) {
         accountWriteOnlyService.delete(id);
         return SuccessResponseBody.builder().build();
     }

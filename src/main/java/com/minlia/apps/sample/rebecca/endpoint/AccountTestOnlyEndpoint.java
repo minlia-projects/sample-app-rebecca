@@ -11,6 +11,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -33,7 +34,7 @@ public class AccountTestOnlyEndpoint {
     //    @PreAuthorize(value = "hasAnyAuthority('account.findAll')")
     @ApiOperation(value = "手写SQL查询出分页带排序结果", notes = "手写SQL查询出分页带排序结果", httpMethod = "POST", produces = MediaType.APPLICATION_JSON_VALUE)
     @PostMapping(value = "findAllPageWithSort", produces = MediaType.APPLICATION_JSON_VALUE)
-    public StatefulBody findAllPageWithSort(@RequestBody ApiQueryRequestBody<AccountQueryRequestBody> body, Pageable pageable) {
+    public StatefulBody findAllPageWithSort(@RequestBody ApiQueryRequestBody<AccountQueryRequestBody> body, @PageableDefault Pageable pageable) {
         Page found = accountDao.findAllAccountsByXmlWithSort("%x%", pageable);
         return SuccessResponseBody.builder().payload(found).build();
     }
@@ -41,7 +42,7 @@ public class AccountTestOnlyEndpoint {
     //    @PreAuthorize(value = "hasAnyAuthority('account.findAll')")
     @ApiOperation(value = "手写SQL查询出分页结果", notes = "手写SQL查询出分页结果", httpMethod = "POST", produces = MediaType.APPLICATION_JSON_VALUE)
     @PostMapping(value = "findAllPage", produces = MediaType.APPLICATION_JSON_VALUE)
-    public StatefulBody findAllPage(@RequestBody ApiQueryRequestBody<AccountQueryRequestBody> body, Pageable pageable) {
+    public StatefulBody findAllPage(@RequestBody ApiQueryRequestBody<AccountQueryRequestBody> body, @PageableDefault Pageable pageable) {
         Page found = accountDao.findAllAccountsByXml("%x%", pageable);
         return SuccessResponseBody.builder().payload(found).build();
     }

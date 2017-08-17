@@ -12,6 +12,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -32,7 +33,7 @@ public class AccountReadOnlyEndpoint implements ApiReadOnlyEndpoint<AccountQuery
     //    @PreAuthorize(value = "hasAnyAuthority('account.findAll')")
     @ApiOperation(value = "根据条件查询分页结果", notes = "根据条件查询分页结果", httpMethod = "POST", produces = MediaType.APPLICATION_JSON_VALUE)
     @PostMapping(value = "findAllPage", produces = MediaType.APPLICATION_JSON_VALUE)
-    public StatefulBody findAll(@RequestBody ApiQueryRequestBody<AccountQueryRequestBody> body, Pageable pageable) {
+    public StatefulBody findAll(@RequestBody ApiQueryRequestBody<AccountQueryRequestBody> body,@PageableDefault Pageable pageable) {
         Page found = accountReadOnlyService.findAll(body, pageable);
         return SuccessResponseBody.builder().payload(found).build();
     }
@@ -41,7 +42,7 @@ public class AccountReadOnlyEndpoint implements ApiReadOnlyEndpoint<AccountQuery
     @ApiOperation(value = "根据条件查询集合结果", notes = "根据条件查询集合结果", httpMethod = "POST", produces = MediaType.APPLICATION_JSON_VALUE)
     @PostMapping(value = "findAllList", produces = MediaType.APPLICATION_JSON_VALUE)
     @Override
-    public SuccessResponseBody findAll(ApiQueryRequestBody<AccountQueryRequestBody> body) {
+    public SuccessResponseBody findAll(@RequestBody ApiQueryRequestBody<AccountQueryRequestBody> body) {
 //        List found = accountReadOnlyService.findAll(body);
 //        return SuccessResponseBody.builder().payload(found).build();
         return SuccessResponseBody.builder().build();

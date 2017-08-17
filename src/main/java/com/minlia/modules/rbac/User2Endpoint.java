@@ -4,6 +4,7 @@ import com.minlia.cloud.body.StatefulBody;
 import com.minlia.cloud.body.impl.SuccessResponseBody;
 import com.minlia.cloud.query.specification.batis.body.ApiQueryRequestBody;
 import com.minlia.modules.rbac.dao.UserDao;
+import com.minlia.modules.rbac.domain.User;
 import com.minlia.modules.rbac.query.UserQueryRequestBody;
 import com.minlia.modules.rbac.service.UserQueryService;
 import io.swagger.annotations.Api;
@@ -17,6 +18,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.AbstractCollection;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Created by will on 8/2/17.
@@ -35,6 +40,7 @@ public class User2Endpoint {
     @Autowired
     UserQueryService userQueryService;
 
+    private AbstractCollection<User> pls;
 //    @Autowired
 //    UserRepository userRepository;
 
@@ -44,12 +50,15 @@ public class User2Endpoint {
             httpMethod = "POST",
             produces = "application/json"
     )
+
     @PostMapping(value = "")
     public StatefulBody findOne(@PageableDefault Pageable pageable, @RequestBody ApiQueryRequestBody<UserQueryRequestBody> body) {
 
 //        Page<User> foundUser2 = user2Dao.findAll222(pageable);
 
+
 //
+
 //        for(int i=0;i<50;i++){
 //            User user=new User();
 //            String random= RandomStringUtils.randomAlphabetic(6);

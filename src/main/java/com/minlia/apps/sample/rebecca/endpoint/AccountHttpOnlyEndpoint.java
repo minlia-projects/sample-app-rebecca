@@ -67,7 +67,7 @@ public class AccountHttpOnlyEndpoint {
         ClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory(httpClient);
         //ClientHttpRequestFactory作为参数构造一个使用作为底层的RestTemplate
         RestTemplate restTemplate = new RestTemplate(requestFactory);
-        restTemplate.getInterceptors().add(new AccessTokenInterceptor());
+//        restTemplate.getInterceptors().add(new AccessTokenInterceptor());
 
 //        RestTemplate restTemplate=new RestTemplate();
         StatefulBody ret = restTemplate.postForObject("http://127.0.0.1:10001/api/account/read/findOne/1", null, StatefulBody.class);

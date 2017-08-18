@@ -50,7 +50,7 @@ public class AccountReadOnlyEndpoint implements ApiReadOnlyEndpoint<AccountQuery
     @PostMapping(value = "findOne/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @Override
     public StatefulBody findOne(@PathVariable Long id) {
-        Account found = accountReadOnlyService.getOne(id);
+        Account found = accountReadOnlyService.findOne(id);
         return SuccessResponseBody.builder().payload(found).build();
     }
 

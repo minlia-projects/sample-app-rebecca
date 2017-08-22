@@ -21,6 +21,7 @@
     </select>
 
     <select id="count_findAllAccountsByXmlWithSort" resultType="com.minlia.apps.sample.rebecca.domain.Account" lang="XML">
+        BEGIN
         SELECT
         count(*)
         from ACCOUNT as account
@@ -28,6 +29,7 @@
         where 1=1
 
         and account.name like #{p0}
+        END;
     </select>
 
 

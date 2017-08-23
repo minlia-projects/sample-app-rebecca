@@ -7,6 +7,7 @@ import com.minlia.apps.sample.rebecca.service.AccountReadOnlyService;
 import com.minlia.apps.sample.rebecca.service.AccountWriteOnlyService;
 import com.minlia.cloud.body.StatefulBody;
 import com.minlia.cloud.body.impl.SuccessResponseBody;
+import com.minlia.cloud.constant.ApiPrefix;
 import com.minlia.cloud.query.specification.batis.body.ApiQueryRequestBody;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -32,7 +33,7 @@ import org.springframework.web.client.RestTemplate;
  * Created by will on 8/17/17.
  */
 @RestController
-@RequestMapping(value = "/api/account/http")
+@RequestMapping(value = ApiPrefix.V1+"account/http")
 @Api( tags = "Account Http",description = "账户网络操作接口")
 @Slf4j
 public class AccountHttpOnlyEndpoint {

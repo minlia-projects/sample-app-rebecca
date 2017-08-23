@@ -5,6 +5,7 @@ import com.minlia.apps.sample.rebecca.domain.Account;
 import com.minlia.apps.sample.rebecca.service.AccountReadOnlyService;
 import com.minlia.cloud.body.StatefulBody;
 import com.minlia.cloud.body.impl.SuccessResponseBody;
+import com.minlia.cloud.constant.ApiPrefix;
 import com.minlia.cloud.endpoint.ApiReadOnlyEndpoint;
 import com.minlia.cloud.query.specification.batis.body.ApiQueryRequestBody;
 import io.swagger.annotations.Api;
@@ -20,7 +21,7 @@ import org.springframework.web.bind.annotation.*;
  * Created by will on 8/17/17.
  */
 @RestController
-@RequestMapping(value = "/api/account/read")
+@RequestMapping(value =  ApiPrefix.V1+"account/read")
 @Api(tags = "Account Read", description = "账户查询接口")
 public class AccountReadOnlyEndpoint implements ApiReadOnlyEndpoint<AccountQueryRequestBody, Account, Long> {
 

@@ -4,6 +4,7 @@ import com.minlia.apps.sample.rebecca.domain.Account;
 import com.minlia.apps.sample.rebecca.service.AccountWriteOnlyService;
 import com.minlia.cloud.body.StatefulBody;
 import com.minlia.cloud.body.impl.SuccessResponseBody;
+import com.minlia.cloud.constant.ApiPrefix;
 import com.minlia.cloud.endpoint.ApiWriteOnlyEndpoint;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
  * Created by will on 8/17/17.
  */
 @RestController
-@RequestMapping(value = "/api/account/write")
+@RequestMapping(value =  ApiPrefix.V1+"account/write")
 @Api(tags = "Account Write", description = "账户操作接口")
 public class AccountWriteOnlyEndpoint implements ApiWriteOnlyEndpoint<Account, Long> {
 

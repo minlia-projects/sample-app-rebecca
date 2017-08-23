@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @RequestMapping(value =  ApiPrefix.V1+"account/read")
-@Api(tags = "Account Read", description = "账户查询接口")
+@Api(tags = "Account", description = "账户接口")
 public class AccountReadOnlyEndpoint implements ApiReadOnlyEndpoint<AccountQueryRequestBody, Account, Long> {
 
     @Autowired

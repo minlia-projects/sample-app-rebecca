@@ -34,7 +34,7 @@ import org.springframework.web.client.RestTemplate;
  */
 @RestController
 @RequestMapping(value = ApiPrefix.V1+"account/http")
-@Api( tags = "Account Http",description = "账户网络操作接口")
+@Api(tags = "Account", description = "账户接口")
 @Slf4j
 public class AccountHttpOnlyEndpoint {
 

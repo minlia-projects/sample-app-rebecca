@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @RequestMapping(value =  ApiPrefix.V1+"account/write")
-@Api(tags = "Account Write", description = "账户操作接口")
+@Api(tags = "Account", description = "账户接口")
 public class AccountWriteOnlyEndpoint implements ApiWriteOnlyEndpoint<Account, Long> {
 
     @Autowired

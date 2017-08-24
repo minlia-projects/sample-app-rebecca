@@ -33,6 +33,8 @@ spring:
         name:
         username: root
         password:
+        continue-on-error: true
+        initialize: true
         # 123123
 
 

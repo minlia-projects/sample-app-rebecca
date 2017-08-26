@@ -31,10 +31,6 @@ public class AccountDaoTest extends AbstractTest {
   }
 
 
-  @Test(expected = DataAccessException.class)
-  public void givenValidData_whenInserting_thenSucceed() {
-
-  }
 
   @Test
   public void findAllAccountsByXmlWithSort() throws Exception {

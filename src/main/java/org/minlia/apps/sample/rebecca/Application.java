@@ -1,4 +1,4 @@
-package com.minlia.apps.sample.rebecca;
+package org.minlia.apps.sample.rebecca;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

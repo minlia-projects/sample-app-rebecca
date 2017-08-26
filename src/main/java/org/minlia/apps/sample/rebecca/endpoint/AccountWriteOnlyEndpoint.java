@@ -1,7 +1,7 @@
-package com.minlia.apps.sample.rebecca.endpoint;
+package org.minlia.apps.sample.rebecca.endpoint;
 
-import com.minlia.apps.sample.rebecca.domain.Account;
-import com.minlia.apps.sample.rebecca.service.AccountWriteOnlyService;
+import org.minlia.apps.sample.rebecca.domain.Account;
+import org.minlia.apps.sample.rebecca.service.AccountWriteOnlyService;
 import com.minlia.cloud.body.StatefulBody;
 import com.minlia.cloud.body.impl.SuccessResponseBody;
 import com.minlia.cloud.constant.ApiPrefix;

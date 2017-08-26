@@ -1,6 +1,5 @@
-package com.minlia.apps.sample.rebecca;
+package org.minlia.apps.sample.rebecca;
 
-import com.minlia.apps.sample.rebecca.Application;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;

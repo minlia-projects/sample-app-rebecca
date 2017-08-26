@@ -1,7 +1,7 @@
-package com.minlia.apps.sample.rebecca.service;
+package org.minlia.apps.sample.rebecca.service;
 
-import com.minlia.apps.sample.rebecca.dao.AccountDao;
-import com.minlia.apps.sample.rebecca.domain.Account;
+import org.minlia.apps.sample.rebecca.dao.AccountDao;
+import org.minlia.apps.sample.rebecca.domain.Account;
 import com.minlia.cloud.service.WriteOnlyService;
 import org.springframework.transaction.annotation.Transactional;
 

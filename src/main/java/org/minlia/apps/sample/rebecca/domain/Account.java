@@ -1,4 +1,4 @@
-package com.minlia.apps.sample.rebecca.domain;
+package org.minlia.apps.sample.rebecca.domain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.minlia.cloud.entity.AbstractEntity;

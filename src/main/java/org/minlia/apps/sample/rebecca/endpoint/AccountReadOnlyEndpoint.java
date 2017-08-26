@@ -1,8 +1,8 @@
-package com.minlia.apps.sample.rebecca.endpoint;
+package org.minlia.apps.sample.rebecca.endpoint;
 
-import com.minlia.apps.sample.rebecca.body.AccountQueryRequestBody;
-import com.minlia.apps.sample.rebecca.domain.Account;
-import com.minlia.apps.sample.rebecca.service.AccountReadOnlyService;
+import org.minlia.apps.sample.rebecca.body.AccountQueryRequestBody;
+import org.minlia.apps.sample.rebecca.domain.Account;
+import org.minlia.apps.sample.rebecca.service.AccountReadOnlyService;
 import com.minlia.cloud.body.StatefulBody;
 import com.minlia.cloud.body.impl.SuccessResponseBody;
 import com.minlia.cloud.constant.ApiPrefix;

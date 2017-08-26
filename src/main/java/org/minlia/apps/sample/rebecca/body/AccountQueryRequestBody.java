@@ -1,4 +1,4 @@
-package com.minlia.apps.sample.rebecca.body;
+package org.minlia.apps.sample.rebecca.body;
 
 import com.minlia.cloud.body.query.QueryOperator;
 import com.minlia.cloud.query.body.QueryRequestBody;

@@ -1,6 +1,6 @@
-package com.minlia.apps.sample.rebecca.dao;
+package org.minlia.apps.sample.rebecca.dao;
 
-import com.minlia.apps.sample.rebecca.domain.Account;
+import org.minlia.apps.sample.rebecca.domain.Account;
 import com.minlia.cloud.dao.Dao;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

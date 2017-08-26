@@ -1,8 +1,8 @@
-package com.minlia.apps.sample.rebecca.service.impl;
+package org.minlia.apps.sample.rebecca.service.impl;
 
-import com.minlia.apps.sample.rebecca.dao.AccountDao;
-import com.minlia.apps.sample.rebecca.domain.Account;
-import com.minlia.apps.sample.rebecca.service.AccountReadOnlyService;
+import org.minlia.apps.sample.rebecca.dao.AccountDao;
+import org.minlia.apps.sample.rebecca.domain.Account;
+import org.minlia.apps.sample.rebecca.service.AccountReadOnlyService;
 import com.minlia.cloud.service.AbstractReadOnlyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

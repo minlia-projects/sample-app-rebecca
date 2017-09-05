@@ -46,7 +46,7 @@ public class AccountReadOnlyEndpoint implements ApiReadOnlyEndpoint<AccountQuery
         return SuccessResponseBody.builder().build();
     }
 
-    //    @PreAuthorize(value = "hasAnyAuthority('account.findOne')")
+//        @PreAuthorize(value = "hasAnyAuthority('account.findOne')")
     @ApiOperation(value = "根据ID查询单个结果", notes = "根据ID查询单个结果", httpMethod = "POST", produces = MediaType.APPLICATION_JSON_VALUE)
     @PostMapping(value = "findOne/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @Override

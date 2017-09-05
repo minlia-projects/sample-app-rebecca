@@ -1,0 +1,39 @@
+package org.minlia.apps.sample.rebecca.listener;
+
+import com.minlia.modules.rbac.event.RegistrationEvent;
+import com.minlia.modules.rbac.service.UserReadOnlyService;
+import org.minlia.apps.sample.rebecca.domain.Account;
+import org.minlia.apps.sample.rebecca.service.AccountWriteOnlyService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.event.EventListener;
+
+/**
+ * Created by will on 9/5/17.
+ */
+public class RegistrationEventReceiver {
+
+//  @Autowired
+//  UserReadOnlyService userReadOnlyService;
+
+  @Autowired
+  AccountWriteOnlyService accountWriteOnlyService;
+
+
+  /**
+   * 当调用源有事务的时候才需要使用TransactionalEventListener, 无事务的时候是不会调用的, 需要使用EventListener
+   */
+//@Async
+//@TransactionalEventListener
+  @EventListener
+  public void onComplete(RegistrationEvent<Long> event) {
+    Long userId = (Long) event.getSource();
+
+    //绑定用户到Account
+    //实际是创建一个新的Account
+    Account account = new Account();
+    account.setUserId(userId);
+    accountWriteOnlyService.save(account);
+
+  }
+
+}

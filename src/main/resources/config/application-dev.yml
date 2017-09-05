@@ -16,7 +16,7 @@ spring:
 #                - classpath:/dao/*Dao.xml
     profile: dev
     application:
-        name: rebeccaapp
+        name: 应用
 
     datasource:
         testOnBorrow: true
@@ -53,7 +53,7 @@ system.security.jwt:
   tokenExpirationTime: 604800 # Number of minutes
   refreshTokenExpTime: 604800 # Minutes
   tokenIssuer: http://minlia.com
-  tokenSigningKey: xm8EV6Hy5RMFK4EEACIDAwQus
+  tokenSigningKey: minlia8EV6Hy5RMFK4EEACIDAwQus
   
 #spring.datasource:
 #  url: "jdbc:h2:mem:testdb"

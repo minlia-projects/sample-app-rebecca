@@ -46,7 +46,7 @@ spring:
         hibernate:
 #            naming:
 #                strategy:
-            ddl-auto: create-drop
+            ddl-auto: update
 
 system.security.jwt:
 #  tokenExpirationTime: 15 # Number of minutes

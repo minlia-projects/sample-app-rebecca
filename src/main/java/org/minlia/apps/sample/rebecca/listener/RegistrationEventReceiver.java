@@ -1,5 +1,6 @@
 package org.minlia.apps.sample.rebecca.listener;
 
+import com.minlia.modules.rbac.domain.User;
 import com.minlia.modules.rbac.event.RegistrationEvent;
 import org.minlia.apps.sample.rebecca.domain.Account;
 import org.minlia.apps.sample.rebecca.service.AccountWriteOnlyService;
@@ -22,18 +23,18 @@ public class RegistrationEventReceiver {
 
   /**
    * 当调用源有事务的时候才需要使用TransactionalEventListener, 无事务的时候是不会调用的, 需要使用EventListener
+   *
    * @Async
    * @TransactionalEventListener
-   * @param event
    */
   @EventListener
-  public void onComplete(RegistrationEvent<Long> event) {
-    Long userId = (Long) event.getSource();
-
+  public void onComplete(RegistrationEvent<User> event) {
+//    Long userId = (Long) event.getSource();
+    User user=(User)event.getSource();
     //绑定用户到Account
     //实际是创建一个新的Account
     Account account = new Account();
-    account.setUserId(userId);
+    account.setUser(user);
     accountWriteOnlyService.save(account);
   }
 

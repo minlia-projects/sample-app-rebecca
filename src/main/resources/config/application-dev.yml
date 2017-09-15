@@ -1,3 +1,4 @@
+
 system:
     appId: rebeccaapp
     token: bWlubGlhCg==
@@ -71,4 +72,6 @@ swagger:
     contact: cloud@minlia.com
     path: /api/.*
     redirect: true
+server:
+  port: 7001
 

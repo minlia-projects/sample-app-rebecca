@@ -8,7 +8,7 @@
   <artifactId>sample-rebecca</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>jar</packaging>
-  <name>Apps sample rebecca</name>
+  <name>Apps Sample rebecca</name>
 
 
   <parent>
@@ -25,9 +25,9 @@
 
     <hsqldb.version>2.3.4</hsqldb.version>
     <commons-dbcp2.version>2.1.1</commons-dbcp2.version>
-    <hibernate.version>5.1.2.Final</hibernate.version>
-    <spring-framework.version>4.3.3.RELEASE</spring-framework.version>
-    <spring-data-jpa.version>1.10.4.RELEASE</spring-data-jpa.version>
+    <!--<hibernate.version>5.1.2.Final</hibernate.version>-->
+    <!--<spring-framework.version>4.3.3.RELEASE</spring-framework.version>-->
+    <!--<spring-data-jpa.version>1.10.4.RELEASE</spring-data-jpa.version>-->
     <lombok.version>1.16.8</lombok.version>
     <junit.version>4.12</junit.version>
     <java-hamcrest.version>2.0.0.0</java-hamcrest.version>

@@ -4,6 +4,9 @@ system:
     token: bWlubGlhCg==
     
 spring:
+#    redis:
+#      host: localhost
+#      password:
 #    data:
 #        mybatis:
 #            before-mapper-locations:

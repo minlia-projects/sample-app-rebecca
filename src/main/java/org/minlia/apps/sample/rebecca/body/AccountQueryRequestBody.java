@@ -6,7 +6,9 @@ import io.swagger.annotations.ApiModel;
 import lombok.Data;
 
 /**
- * Created by will on 8/13/17.
+ *
+ * @author will
+ * @date 8/13/17
  * 前端传入搜索参数时的请求体
  */
 @ApiModel(value = "账户搜索")

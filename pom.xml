@@ -53,7 +53,7 @@
         <artifactId>spring-boot-maven-plugin</artifactId>
         <configuration>
           <addResources>true</addResources>
-          <mainClass>com.minlia.apps.sample.rebecca.Application</mainClass>
+          <mainClass>org.minlia.apps.sample.rebecca.Application</mainClass>
           <executable>true</executable>
         </configuration>
         <executions>

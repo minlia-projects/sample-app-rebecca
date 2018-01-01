@@ -1,0 +1,57 @@
+databaseChangeLog:
+#  - changeSet:
+#      id: create table shedlock
+#      author: will
+##      validCheckSums:
+##        - e5b7b29ce3a75640858cd022501852d2
+##      preConditions:
+##        - changeLogPropertyDefined:
+##            property: real.int.type
+##        - changeLogPropertyDefined:
+##            property: real.int.type
+##            value: int
+#      changes:
+#        - createTable:
+#            tableName: mdl-shedlock
+#            schemaName: ""
+#            columns:
+#              - column:
+#                  name: name
+#                  type: VARCHAR(64)
+#                  constraints:
+#                    primaryKey: true
+#                    nullable: false
+#              - column:
+#                  name: lock_until
+#                  type: TIMESTAMP(3)
+#              - column:
+#                  name: locked_at
+#                  type: TIMESTAMP(3)
+#              - column:
+#                  name: locked_by
+#                  type: VARCHAR(255)
+  - changeSet:
+      id: 1
+      author: will
+      changes:
+        - createTable:
+            tableName: mdl_shedlock
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: firstname
+                  type: varchar(50)
+              - column:
+                  name: lastname
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: state
+                  type: char(2)

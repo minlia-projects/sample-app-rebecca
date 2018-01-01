@@ -3,6 +3,7 @@ package org.minlia.apps.sample.rebecca.endpoint;
 import org.minlia.apps.sample.rebecca.body.AccountQueryRequestBody;
 import org.minlia.apps.sample.rebecca.dao.AccountDao;
 import org.minlia.apps.sample.rebecca.domain.Account;
+import org.minlia.apps.sample.rebecca.mapper.TestMapper;
 import org.minlia.apps.sample.rebecca.service.AccountReadOnlyService;
 import org.minlia.apps.sample.rebecca.service.AccountWriteOnlyService;
 import com.minlia.cloud.body.StatefulBody;
@@ -47,6 +48,9 @@ public class AccountHttpOnlyEndpoint {
     @Autowired
     private AccountDao accountDao;
 
+    @Autowired
+    private TestMapper testMapper;
+
 //    @Autowired
 //    private RestTemplate restTemplate;
 
@@ -54,6 +58,9 @@ public class AccountHttpOnlyEndpoint {
     @ApiOperation(value = "手写SQL查询出分页带排序结果", notes = "手写SQL查询出分页带排序结果", httpMethod = "POST", produces = MediaType.APPLICATION_JSON_VALUE)
     @PostMapping(value = "findAllPageWithSort", produces = MediaType.APPLICATION_JSON_VALUE)
     public StatefulBody findAllPageWithSort(@RequestBody ApiQueryRequestBody<AccountQueryRequestBody> body, @PageableDefault Pageable pageable) {
+
+        testMapper.insert();
+
 
         Account account = new Account();
         account.setName("XXLLSLSK");

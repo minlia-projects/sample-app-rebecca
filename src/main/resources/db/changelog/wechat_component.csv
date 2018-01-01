@@ -1,0 +1,3 @@
+name,created_by,created_date                ,enabled,last_modified_by,last_modified_date          ,appid               ,appsecret                         ,encoding_aes_key                             ,host                        ,token
+"MINI平台","10000","2017-10-08 00:06:22.000000","1","10000","2017-10-08 00:06:22.000000","wxdb440833271889f5","6697072e334c886db5acde1152374b2f","officialaccountmessagedecryptionkey43bits0k","http://mini.dev.chinfan.io","xkaidududjfjksdkfadsjkfadskfdsfkjsdafdskfsd"
+"千云平台","10000","2017-10-08 00:06:22.000000","1","10000","2017-10-08 00:06:22.000000","wx8c99f168ed675e2e","94a43d18c4e7d1fb263cdbe4862090d8","officialaccountmessagedecryptionkey43bits0k","http://cloud.dev.chinfan.io","xkaidududjfjksdkfadsjkfadskfdsfkjsdafdskfse"

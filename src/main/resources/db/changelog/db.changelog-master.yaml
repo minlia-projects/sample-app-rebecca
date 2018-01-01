@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/db.changelog-language.yaml
+  - include:
+      file: db/changelog/db.changelog-rebecca.yaml
+#  - include:
+#      file: db/changelog/db.changelog-wechat-component.yaml

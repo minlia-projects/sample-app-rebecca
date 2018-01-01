@@ -1,0 +1,12 @@
+databaseChangeLog:
+  - changeSet:
+      id: initialize industry solution
+      author: will
+      preConditions:
+        - sqlCheck:
+            expectedResult: 0
+            sql: select count(*) from industry_solution;
+      changes:
+        - loadData:
+            tableName: industry_solution
+            file: db/changelog/industry_solutions.csv

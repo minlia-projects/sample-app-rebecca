@@ -1,0 +1,15 @@
+databaseChangeLog:
+  - changeSet:
+      id: initialize wechat component
+      author: will
+      preConditions:
+        - sqlCheck:
+            expectedResult: 0
+            sql: select count(*) from mdl_wechat_component_detail;
+      changes:
+        - loadData:
+            encoding: UTF-8
+            separator: ','
+            quotchar: '"'
+            tableName: mdl_wechat_component_detail
+            file: db/changelog/wechat_component.csv

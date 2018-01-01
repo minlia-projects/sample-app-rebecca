@@ -3,9 +3,9 @@
 <mapper namespace="org.minlia.apps.sample.rebecca.mapper.TestMapper">
 
 
-    <insert id="insert">
-        insert into account values(1,1,1,1,1);
-    </insert>
+    <select id="count" resultType="integer">
+        select count(*) from account where id>1;
+    </select>
 
 
 </mapper>

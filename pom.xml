@@ -120,7 +120,6 @@
         <exclusion>
           <artifactId>android-json</artifactId>
           <groupId>com.vaadin.external.google</groupId>
-          <!--com.vaadin.external.google:android-json-->
         </exclusion>
       </exclusions>
       <scope>test</scope>
@@ -180,15 +179,6 @@
       <artifactId>module-bible</artifactId>
       <version>1.0.1-SNAPSHOT</version>
     </dependency>
-
-    <!--<dependency>-->
-      <!--<groupId>org.springframework.data</groupId>-->
-      <!--<artifactId>spring-data-redis</artifactId>-->
-    <!--</dependency>-->
-    <!--<dependency>-->
-      <!--<groupId>redis.clients</groupId>-->
-      <!--<artifactId>jedis</artifactId>-->
-    <!--</dependency>-->
 
     <dependency>
       <groupId>com.mashape.unirest</groupId>

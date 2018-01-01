@@ -59,7 +59,7 @@ public class AccountHttpOnlyEndpoint {
     @PostMapping(value = "findAllPageWithSort", produces = MediaType.APPLICATION_JSON_VALUE)
     public StatefulBody findAllPageWithSort(@RequestBody ApiQueryRequestBody<AccountQueryRequestBody> body, @PageableDefault Pageable pageable) {
 
-        testMapper.insert();
+        testMapper.count();
 
 
         Account account = new Account();
